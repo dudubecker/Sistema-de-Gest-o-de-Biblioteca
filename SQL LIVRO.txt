@@ -44,4 +44,4 @@ SELECT * FROM livro WHERE autor LIKE '%machado%';
 
 INSERT INTO emprestimo(id_livro, nome_pessoa, data_emprestimo)
 VALUES
-(2,'Marialba','2021-02-02 18:51:31');
+(2,'João','2021-02-02 18:51:31');
