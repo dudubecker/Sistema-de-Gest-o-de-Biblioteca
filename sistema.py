@@ -47,7 +47,7 @@ def queryAlteracao(query):
     
     """Essa função faz uma conexão com o banco de dados, executa a query especificada, faz um commit e fecha a conexão"""
     
-    #cnx = mysql.connector.connect(user='root', password='963852aezakmi', host='35.188.78.103', database='livro')
+    # Obs: o parâmetro "password" e "host" necessita de um registro externo na google cloud!
     cnx = mysql.connector.connect(user='root', password='', host='localhost', database='livro')
     cursor = cnx.cursor()
     cursor.execute(query)
@@ -59,7 +59,7 @@ def queryObtencao(query):
     
     """Essa função faz uma conexão com o banco de dados, executa uma query de select, fecha a conexão e retorna uma lista de tuplas com os dados"""    
 
-    #cnx = mysql.connector.connect(user='root', password='963852aezakmi', host='35.188.78.103', database='livro')
+    # Obs: os parâmetros "password" e "host" necessitam de um registro externo na google cloud!
     cnx = mysql.connector.connect(user='root', password='', host='localhost', database='livro')
     cursor = cnx.cursor()
     
@@ -71,7 +71,7 @@ def queryObtencao(query):
 
 def printarTabela(query):
     
-    #cnx = mysql.connector.connect(user='root', password='963852aezakmi', host='35.188.78.103', database='livro')
+    # Obs: os parâmetros "password" e "host" necessitam de um registro externo na google cloud!
     cnx = mysql.connector.connect(user='root', password='', host='localhost', database='livro')
     cursor = cnx.cursor()
     
