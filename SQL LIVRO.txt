@@ -1,0 +1,47 @@
+USE livro;
+
+CREATE TABLE livro(
+id_livro INT NOT NULL,
+nome VARCHAR(100),
+autor VARCHAR(100),
+tipo VARCHAR(30),
+estante VARCHAR(1),
+fileira VARCHAR(1),
+data_registro DATETIME,
+PRIMARY KEY (id_livro)
+);
+
+CREATE TABLE emprestimo(
+id_emprestimo INT NOT NULL AUTO_INCREMENT,
+id_livro INT NOT NULL,
+nome_pessoa VARCHAR(50),
+data_emprestimo DATETIME,
+PRIMARY KEY (id_emprestimo),
+FOREIGN KEY (id_livro) REFERENCES livro(id_livro)
+);
+
+
+# Para registrar novos livros:
+
+INSERT INTO livro(id_livro, nome, autor, tipo, estante, fileira, data_registro)
+VALUES
+(1,'Memórias póstumas de Brás Cubas','Machado de Assis','Romance','1','1','2021-02-02 18:51:31');
+
+
+# Para pesquisar por nome do livro:
+
+SELECT * FROM livro WHERE nome LIKE '%memorias%';
+
+# Para pesquisar por nome do autor:
+
+SELECT * FROM livro WHERE autor LIKE '%machado%';
+
+# Para deletar um registro de livro:
+
+'DELETE FROM livro WHERE id_livro = 1;'
+
+# Para registrar um empréstimo:
+
+INSERT INTO emprestimo(id_livro, nome_pessoa, data_emprestimo)
+VALUES
+(2,'Marialba','2021-02-02 18:51:31');
